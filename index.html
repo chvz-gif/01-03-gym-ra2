@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="01|03 Gym: demostración web del sistema de gestión de clientes, membresías, entrenadores, pagos y reportes de un gimnasio.">
+  <meta name="keywords" content="01|03 Gym, gimnasio, gestión, clientes, membresías, entrenadores, pagos, reportes">
+  <meta name="author" content="Emmanuel Chávez y Johan Brown">
+  <title>01|03 Gym — RA2</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section id="loginScreen" class="login-screen">
+    <div class="login-card">
+      <div class="logo-box"><span>01|03</span></div>
+      <h1>01|03 Gym</h1>
+      <p class="muted">Sistema web de gestión del gimnasio</p>
+
+      <form id="loginForm" class="stack-form">
+        <label for="usuario">Usuario</label>
+        <input id="usuario" name="usuario" type="text" placeholder="Digite su usuario" required>
+
+        <label for="clave">Clave</label>
+        <input id="clave" name="clave" type="password" placeholder="Digite su clave" required>
+
+        <button class="btn primary" type="submit">Acceder al sistema</button>
+      </form>
+
+      <div class="author-box">
+        <strong>Autores</strong>
+        <span>Emmanuel Chávez</span>
+        <span>Johan Brown</span>
+      </div>
+      <small class="muted">Proyecto RA2</small>
+      <p class="demo-note">Versión estática de demostración. No se conecta a MySQL; los cambios quedan guardados solamente en este navegador.</p>
+    </div>
+  </section>
+
+  <div id="app" class="hidden">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mini">01|03</div>
+        <div>
+          <strong>01|03 Gym</strong>
+          <span>Sistema de Gestión</span>
+        </div>
+      </div>
+      <div class="top-actions">
+        <span id="currentUser" class="user-pill"></span>
+        <button id="logoutBtn" class="btn ghost" type="button">Cerrar sesión</button>
+      </div>
+    </header>
+
+    <div class="demo-banner" role="status">Demostración sin base de datos: la información se guarda localmente en este navegador y no se comparte con otros usuarios.</div>
+    <nav class="menu" aria-label="Menú principal">
+      <button class="nav-btn active" data-view="inicio">Inicio</button>
+      <button class="nav-btn" data-view="clientes">Clientes</button>
+      <button class="nav-btn" data-view="membresias">Membresías</button>
+      <button class="nav-btn" data-view="entrenadores">Entrenadores</button>
+      <button class="nav-btn" data-view="pagos">Pagos</button>
+      <button class="nav-btn" data-view="reportes">Reportes</button>
+    </nav>
+
+    <main id="content"></main>
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
